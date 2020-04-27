@@ -30,7 +30,7 @@ ggplot(df.l, aes(y = value, x = reorder(mois, ordre),
   labs(title = "Nombre de décès mensuels au Québec de 2010 à 2020",
        subtitle = "Données : Gouvernement du Québec",
        caption = "Alexandre Blanchet (@alex_blanchet),
-       Github : https://github.com/alexblanchet/covid") +
+       GitHub : https://github.com/alexblanchet/covid") +
   xlab("Mois") +
   ylab("Nombre de décès") +
   theme_bw()

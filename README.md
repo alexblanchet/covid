@@ -1,2 +1,2 @@
 # covid
-Code permettant de faire la figure suivant le nombre de décès au Québec en 2020 par rapport aux autres années depuis 2010. Le code pourra simplement être roulé lorsque les données récentes de 2020 seront disponible (si le lien vers le fichier excel ne change pas).
+Code permettant de faire la figure suivant le nombre de décès au Québec en 2020 par rapport aux autres années depuis 2010. Le code pourra simplement être roulé lorsque les données récentes de 2020 seront disponible (si le lien vers le fichier excel ne change pas, ligne 3 du code). Si le lien url change, alors il faudra simplement le mettre à jour. 

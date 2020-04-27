@@ -28,8 +28,9 @@ ggplot(df.l, aes(y = value, x = reorder(mois, ordre),
                      labels = c("2020", "2010 à 2019"),
                      values = c("red", "grey")) +
   labs(title = "Nombre de décès mensuels au Québec de 2010 à 2020",
-       caption = "Données : Gouvernement du Québec, 
-       url : https://www.stat.gouv.qc.ca/statistiques/population-demographie/naissance-fecondite/i210.xlsx") +
+       subtitle = "Données : Gouvernement du Québec",
+       caption = "Alexandre Blanchet (@alex_blanchet),
+       Github : https://github.com/alexblanchet/covid") +
   xlab("Mois") +
   ylab("Nombre de décès") +
   theme_bw()

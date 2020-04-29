@@ -35,3 +35,4 @@ ggplot(df.l, aes(y = value, x = reorder(mois, ordre),
   ylab("Nombre de décès") +
   theme_bw()
 ggsave("fig_deces.jpg", width = 10, height = 5)
+

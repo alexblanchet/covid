@@ -1,7 +1,7 @@
 # Load data
 source("data_prep.R")
 
-# Ajout manuel de mars et avril (source : Journal de Montréal)
+# Ajout manuel de mars et avril
 df.l$value[df.l$variable == 2020 & df.l$mois == "Mars"] <- 6349
 df.l$value[df.l$variable == 2020 & df.l$mois == "Avril"] <- 7660
 

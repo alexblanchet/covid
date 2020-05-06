@@ -7,3 +7,17 @@ Le code du fichier _deces_desc.R_ permet de faire la figure suivant le nombre de
 
 ## Données
 Les données sont disponibles à cette page : https://www.stat.gouv.qc.ca/statistiques/population-demographie/naissance-fecondite/i210.htm
+
+Les données pour les mois de mars et avril 2020 n'ont pas été officiellement rendues publiques pour l'instant. Cependant, un article du journal de Montréal nous informe que le Québec aurait connu 6349 décès en mars et 7660 en avril. Ces chiffres ont été ajoutés pour tenir compte de ces informations.
+
+L'article est disponible par là : https://www.journaldemontreal.com/2020/05/06/le-nombre-de-morts-pourrait-etre-sous-estime-au-quebec
+
+
+## Projections
+Le code predictions.R produit des prédictions mensuelles pour l'année 2020 basée sur une simple régression linéaire prenant la forme suivante : 
+
+$$\gamma = \alpha + \beta_{i}MOIS_i + \beta_2(ANNÉE-2010) + \epsilon $$
+
+et où
+
+$\alpha$ correspond à la constante, $\beta_{i}MOIS_i$ une série de variable dichotomiques correspondant au mois $i$, $\beta_2(ANNÉE-2010)$ à l'année concernée - 2010 afin de faire en sorte que l'année 2010 soit l'année 0 et $\epsilon$ est un simple terme d'erreur. 

@@ -16,3 +16,5 @@ library(reshape2)
 df.l <- melt(df, id.vars = "mois")
 df.l$ordre <- rep(1:12, times = 11)
 df.l$couleur <- ifelse(df.l$variable == 2020, "a", "b")
+
+rm(i210, destfile, url)

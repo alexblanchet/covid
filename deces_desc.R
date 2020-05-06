@@ -1,6 +1,10 @@
 # Load data
 source("data_prep.R")
 
+# Ajout manuel de mars et avril (source : Journal de Montréal)
+df.l$value[df.l$variable == 2020 & df.l$mois == "Mars"] <- 6349
+df.l$value[df.l$variable == 2020 & df.l$mois == "Avril"] <- 7660
+
 # Plot
 library(ggplot2)
 
@@ -19,4 +23,3 @@ ggplot(df.l, aes(y = value, x = reorder(mois, ordre),
   ylab("Nombre de décès") +
   theme_bw()
 ggsave("fig_deces.jpg", width = 10, height = 5)
-

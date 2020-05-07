@@ -5,7 +5,7 @@ source("data_prep.R")
 df.l$value[df.l$variable == 2020 & df.l$mois == "Mars"] <- 6349
 df.l$value[df.l$variable == 2020 & df.l$mois == "Avril"] <- 7660
 
-# Plot
+# Plot figure descriptive
 library(ggplot2)
 
 ggplot(df.l, aes(y = value, x = reorder(mois, ordre), 

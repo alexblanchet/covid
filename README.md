@@ -14,10 +14,10 @@ L'article est disponible par là : https://www.journaldemontreal.com/2020/05/06/
 
 
 ## Projections
-Le code projections.R produit des prédictions mensuelles pour l'année 2020 basée sur une simple régression linéaire prenant la forme suivante : 
+Le code projections.R produit des projections mensuelles pour l'année 2020 basée sur une simple régression linéaire prenant la forme suivante : 
 
-$$\gamma = \alpha + \beta_{i}MOIS_i + \beta_2(ANNÉE-2010) + \epsilon $$
+$$\gamma = \alpha + \beta_{i}MOIS_{i} + \beta_{2}(ANNÉE-2010) + \epsilon $$
 
 et où
 
-$\alpha$ correspond à la constante, $\beta_{i}MOIS_i$ une série de variables dichotomiques correspondant au mois $i$, $\beta_2(ANNÉE-2010)$ à l'année concerné - 2010 afin de faire en sorte que l'année 2010 soit l'année 0 et $\epsilon$ est un simple terme d'erreur. 
+$\alpha$ correspond à la constante, $\beta_{i}MOIS_{i}$ une série de variables dichotomiques correspondant au mois $i$, $\beta_2(ANNÉE-2010)$ à l'année concernée - 2010 afin de faire en sorte que l'année 2010 soit l'année 0, et $\epsilon$ est un simple terme d'erreur. 

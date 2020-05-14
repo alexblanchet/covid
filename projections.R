@@ -48,6 +48,8 @@ df.l$couleur[df.l$annee != 2020] <- "c"
 #------------------------------------- Figure
 couleur <- c("red", "red4", "grey")
 
+library(ggplot2)
+
 ggplot(df.l) +
   geom_path(aes(y = deces, x = reorder(mois, ordre), 
                  group = annee, colour = couleur, fill = couleur)) +

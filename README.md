@@ -14,7 +14,7 @@ L'article est disponible par là : https://www.journaldemontreal.com/2020/05/06/
 
 
 ## Projections
-Le code projections.R produit des projections mensuelles pour l'année 2020 basée sur une simple régression linéaire prenant la forme suivante : 
+Le code predictions.R produit des projections mensuelles pour l'année 2020 basée sur une simple régression linéaire prenant la forme suivante : 
 
 $$\gamma = \alpha + \beta_{i}MOIS_{i} + \beta_{2}(ANNÉE-2010) + \epsilon $$
 

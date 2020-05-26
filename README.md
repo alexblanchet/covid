@@ -16,10 +16,12 @@ Les données sur les décès au Québec sont disponibles le [site du gouvernemen
 
 Les données pour les mois de mars et avril 2020 n'ont pas été officiellement rendues publiques pour l'instant. Cependant, [un article du Journal de Montréal](https://www.journaldemontreal.com/2020/05/06/le-nombre-de-morts-pourrait-etre-sous-estime-au-quebec) nous informe que le Québec aurait connu 6349 décès en mars et 7660 en avril. Ces chiffres ont été ajoutés pour tenir compte de ces informations. 
 
+L'ISQ a rendu public des [données _hebdomadaires](https://www.stat.gouv.qc.ca/statistiques/population-demographie/deces-mortalite/DecesSemaine_QC_2010-2020_GrAge.xlsx). 
+
 Les données sur la mobilité ont été rendues publiques par [Google](https://www.google.com/covid19/mobility/) et [Apple](https://www.apple.com/covid19/mobility). 
 
 ## Projections de décès
-Le code predictions.R produit des projections mensuelles pour l'année 2020 basée sur une simple régression linéaire prenant la forme suivante : 
+Le code _predictions.R_ produit des projections mensuelles pour l'année 2020 basée sur une simple régression linéaire prenant la forme suivante : 
 
 $$\gamma = \alpha + \beta_{i}MOIS_{i} + \beta_{2}(ANNÉE-2010) + \epsilon $$
 
@@ -27,3 +29,4 @@ et où
 
 $\alpha$ correspond à la constante, $\beta_{i}MOIS_{i}$ une série de variables dichotomiques correspondant au mois $i$, $\beta_2(ANNÉE-2010)$ à l'année concernée - 2010 afin de faire en sorte que l'année 2010 soit l'année 0, et $\epsilon$ est un simple terme d'erreur. 
 
+Le fichier _fig_cavabienaller.R_ permet de faire les prédictions de décès et de faire la figure colorée aux couleurs de l'arc-en-ciel utilisée à des fins d'enseignement et de loufoque. 

@@ -67,10 +67,10 @@ ggplot(t.fig) +
                      labels = c("2020 projections", "2020 réel", "2010 à 2019"),
                      values = couleur) +
   labs(title = "Nombre de décès hebdomadaire au Québec de 2010 à 2020, par tranche d'âge",
-       subtitle = "Données : Institut de la statistique du Québec",
+       subtitle = "Données : Institut de la statistique du québec",
        caption = "Alexandre Blanchet (@alex_blanchet),
        GitHub : https://github.com/alexblanchet/covid") +
-  xlab("Mois") +
+  xlab("Semaines") +
   ylab("Nombre de décès") +
   theme_bw() 
 ggsave("predictions_hebdo.jpg", width = 10, height = 5)

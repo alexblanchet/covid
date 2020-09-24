@@ -7,8 +7,9 @@ df.l$mois <- factor(df.l$mois)
 df.l$annee <- as.numeric(df.l$annee) + 2009
 
 # Ajout manuel de mars et avril (source : Journal de Montréal)
-df.l$deces[df.l$annee == 2020 & df.l$mois == "Mars"] <- 6349
-df.l$deces[df.l$annee == 2020 & df.l$mois == "Avril"] <- 7660
+#df.l$deces[df.l$annee == 2020 & df.l$mois == "Mars"] <- 6349
+#df.l$deces[df.l$annee == 2020 & df.l$mois == "Avril"] <- 7660
+# Ajouts devenus inutile depuis la diffusion des données officielles.
 
 #------------------------------------- Modèle
 # Créer le sample d'estimation avant la covid allant de janvier 2010 à février 2020
@@ -25,7 +26,6 @@ pred <- data.frame(mois =  c("Mars", "Avril", "Mai", "Juin", "Juillet",
                    )
 
 pred <- cbind(pred, predict(m, pred, interval = "prediction"))
-
 #------------------------------------- Data prep
 pred$annee <- 2020
 pred$ordre <- c(3:12)

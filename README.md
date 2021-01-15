@@ -5,11 +5,10 @@ Les analyses produites sont faites à temps perdu au gré de mes intérêts. Je 
 
 # Utilisation du code
 
-Le code du fichier _data_prep.R_ charge les données sur les décès depuis le site du gouvernement du Québec et les prépare de sorte à les rendre utilisables. Le code pourra être roulé lorsque les données récentes de 2020 seront disponibles (si le lien vers le fichier Excel à la ligne 3 du code ne change pas). Le lien URL vers les données semble fixe et il est donc peu probable que le lien change dans l'avenir. 
+Le code du fichier _data_prep.R_ charge les données sur les décès depuis le site du gouvernement du Québec et les prépare de sorte à les rendre utilisables. Le code pourra être roulé lorsque les données récentes de 2020 seront disponibles (si le lien vers le fichier Excel à la ligne 3 du code ne change pas). Le lien URL vers les données semble fixe et il est donc peu probable que le lien change dans l'avenir. Le fichier _predictions.R_ utilise les données _mensuelles_ pour créer une projection du nombre de décès en 2020 en utilisant un modèle linéaire simple décrit plus bas à la section «Projection des décès». Il s'agit du code de la toute première figure que j'ai produite dans [une série de tweets](https://twitter.com/Alex_Blanchet/status/1258202363745177600?s=20) datée du 5 mai 2020. 
 
-Le code du fichier _deces_desc.R_ permet de faire la figure suivant le nombre de décès au Québec en 2020 par rapport aux autres années depuis 2010. 
+Le fichier _fig_cavabienaller.R_ permet de faire les prédictions de décès et de faire la figure colorée aux couleurs de l'arc-en-ciel utilisée à des fins d'enseignement et de loufoque. Cette figure est fondée sur le même modèle simple que la précédente et utilise aussi les données mensuelles. 
 
-Le fichier _figures_google_data.R_ permet de faire les figures sur l'évolution de la mobilité comparant l'Ontario et le Québec en utilisant les données de Google. Le fichier _figures_apple_data.R_ fait la même chose en comparant Montréal à l'Ontario avec les données d'Apple. Malheureusement, Apple s'amuse à changer constemment le lien vers leurs données et simplement ajuster la date à la fin du lien ne fonctionne pas parce que d'autres éléments du lien changent. Il faut donc systématiquement mettre à jour le lien URL maneuellement en allant à https://www.apple.com/covid19/mobility. Il n'y a pas ce problème pour les données de Google qui sont systématiquement à jour lorsque le code est roulé.
 
 ## Données
 Les données sur les décès au Québec sont disponibles le [site du gouvernement du Québec](https://www.stat.gouv.qc.ca/statistiques/population-demographie/naissance-fecondite/i210.htm)
@@ -18,15 +17,18 @@ Les données pour les mois de mars et avril 2020 n'ont pas été officiellement 
 
 L'ISQ a rendu public des [données _hebdomadaires](https://www.stat.gouv.qc.ca/statistiques/population-demographie/deces-mortalite/DecesSemaine_QC_2010-2020_GrAge.xlsx). 
 
-Les données sur la mobilité ont été rendues publiques par [Google](https://www.google.com/covid19/mobility/) et [Apple](https://www.apple.com/covid19/mobility). 
+Des données sur la mobilité ont été rendues publiques par [Google](https://www.google.com/covid19/mobility/) et [Apple](https://www.apple.com/covid19/mobility). 
 
 ## Projections de décès
-Le code _predictions.R_ produit des projections mensuelles pour l'année 2020 basée sur une simple régression linéaire prenant la forme suivante : 
+
+### Projections simples avec les données mensuelles
+Le fichier _predictions.R_ utilise les données _mensuelles_ pour créer une projection du nombre de décès en 2020 en utilisant un modèle linéaire simple prenant la forme suivante : 
 
 $$\gamma = \alpha + \beta_{i}MOIS_{i} + \beta_{2}(ANNÉE-2010) + \epsilon $$
 
 et où
 
-$\alpha$ correspond à la constante, $\beta_{i}MOIS_{i}$ une série de variables dichotomiques correspondant au mois $i$, $\beta_2(ANNÉE-2010)$ à l'année concernée - 2010 afin de faire en sorte que l'année 2010 soit l'année 0, et $\epsilon$ est un simple terme d'erreur. 
+$\alpha$ correspond à la constante, $\beta_{i}MOIS_{i}$ une série de variables dichotomiques correspondant au mois $i$, $\beta_2(ANNÉE-2010)$ à l'année concernée - 2010 afin de faire en sorte que l'année 2010 soit l'année 0, et $\epsilon$ est un simple terme d'erreur.
+ 
+### Projections bayesiennes avec les données hebdomadaires
 
-Le fichier _fig_cavabienaller.R_ permet de faire les prédictions de décès et de faire la figure colorée aux couleurs de l'arc-en-ciel utilisée à des fins d'enseignement et de loufoque. 

@@ -5,15 +5,15 @@ Les analyses produites sont faites à temps perdu au gré de mes intérêts. Je 
 
 # Utilisation du code
 
-Le code du fichier _data_prep.R_ charge les données sur les décès depuis le site du gouvernement du Québec et les prépare de sorte à les rendre utilisables. Le code pourra être roulé lorsque les données récentes de 2020 seront disponibles (si le lien vers le fichier Excel à la ligne 3 du code ne change pas). Le lien URL vers les données semble fixe et il est donc peu probable que le lien change dans l'avenir. Le fichier _predictions.R_ utilise les données _mensuelles_ pour créer une projection du nombre de décès en 2020 en utilisant un modèle linéaire simple décrit plus bas à la section «Projection des décès». Il s'agit du code de la toute première figure que j'ai produite dans [une série de tweets](https://twitter.com/Alex_Blanchet/status/1258202363745177600?s=20) datée du 5 mai 2020. 
+Les fichiers _data_prep.R_ et _data_prep_hebdo.R_ chargent les données sur les décès depuis le site du gouvernement du Québec et les préparent de sorte à les rendre utilisables.  
 
-Le fichier _fig_cavabienaller.R_ permet de faire les prédictions de décès et de faire la figure colorée aux couleurs de l'arc-en-ciel utilisée à des fins d'enseignement et de loufoque. Cette figure est fondée sur le même modèle simple que la précédente et utilise aussi les données mensuelles. 
+Le fichier _fig_cavabienaller.R_ permet de faire les prédictions de décès et de faire la figure colorée aux couleurs de l'arc-en-ciel utilisées à des fins d'enseignement et de loufoque. Cette figure est fondée sur le même modèle simple que la précédente et utilise aussi les données mensuelles. 
 
 
 ## Données
 Les données sur les décès au Québec sont disponibles le [site du gouvernement du Québec](https://www.stat.gouv.qc.ca/statistiques/population-demographie/naissance-fecondite/i210.htm)
 
-Les données pour les mois de mars et avril 2020 n'ont pas été officiellement rendues publiques pour l'instant. Cependant, [un article du Journal de Montréal](https://www.journaldemontreal.com/2020/05/06/le-nombre-de-morts-pourrait-etre-sous-estime-au-quebec) nous informe que le Québec aurait connu 6349 décès en mars et 7660 en avril. Ces chiffres ont été ajoutés pour tenir compte de ces informations. 
+Les données pour les mois de mars et avril 2020 n'ont pas été officiellement rendues publiques pour l'instant. Cependant [un article du Journal de Montréal](https://www.journaldemontreal.com/2020/05/06/le-nombre-de-morts-pourrait-etre-sous-estime-au-quebec) nous informe que le Québec aurait connu 6349 décès en mars et 7660 en avril. Ces chiffres ont été ajoutés pour tenir compte de ces informations. 
 
 L'ISQ a rendu public des [données _hebdomadaires](https://www.stat.gouv.qc.ca/statistiques/population-demographie/deces-mortalite/DecesSemaine_QC_2010-2020_GrAge.xlsx). 
 
@@ -22,13 +22,7 @@ Des données sur la mobilité ont été rendues publiques par [Google](https://w
 ## Projections de décès
 
 ### Projections simples avec les données mensuelles
-Le fichier _predictions.R_ utilise les données _mensuelles_ pour créer une projection du nombre de décès en 2020 en utilisant un modèle linéaire simple prenant la forme suivante : 
-
-$$\gamma = \alpha + \beta_{i}MOIS_{i} + \beta_{2}(ANNÉE-2010) + \epsilon $$
-
-et où
-
-$\alpha$ correspond à la constante, $\beta_{i}MOIS_{i}$ une série de variables dichotomiques correspondant au mois $i$, $\beta_2(ANNÉE-2010)$ à l'année concernée - 2010 afin de faire en sorte que l'année 2010 soit l'année 0, et $\epsilon$ est un simple terme d'erreur.
+Le fichier _predictions.R_ utilise les données _mensuelles_ pour créer une projection du nombre de décès en 2020 en utilisant un modèle linéaire simple OLS.
  
-### Projections bayesiennes avec les données hebdomadaires
-
+### Projections bayésiennes avec les données hebdomadaires
+Le fichier _deces_hebdo_bayes_poisson.R_ estime le nombre de décès attendus en 2020 à parties des données de décès hebdomadaires de 2009 à 2019 et compare ce nombre de décès attendus au nombre observé. Le modèle bayésien utilise une distribution de poisson et utilise la distance par rapport au solstice d'été pour modéliser la variation temporelle du nombre de décès attendus dans l'année. Les commentaires et suggestions sont les bienvenus.

@@ -1,5 +1,5 @@
 # Covid
-Les fichiers de ce répertoire contiennent le code nécessaire pour reproduire différentes figures sur la mortalité au Québec dans le contexte de la crise du Covid-19. Il contient également le code nécessaire pour produire les figures de mobilité à partir des données de Google et Apple. Toute autre analyse produite dans le cadre de ce projet sera ajoutée à ce répertoire. 
+Les fichiers de ce répertoire contiennent le code nécessaire pour reproduire différentes figures sur la mortalité au Québec dans le contexte de la crise du Covid-19. Toute autre analyse produite dans le cadre de ce projet sera ajoutée à ce répertoire. 
 
 Les analyses produites sont faites à temps perdu au gré de mes intérêts. Je suis toujours disposé à recevoir des commentaires et des suggestions __constructives__, mais je ne peux pas consacrer énormément de temps à ces analyses qui demeurent donc forcément un peu préliminaires. Les personnes qui ont des améliorations à suggérer sont invitées à les proposer.
 
@@ -9,6 +9,7 @@ Les fichiers _data_prep.R_ et _data_prep_hebdo.R_ chargent les données sur les 
 
 Le fichier _fig_cavabienaller.R_ permet de faire les prédictions de décès et de faire la figure colorée aux couleurs de l'arc-en-ciel utilisées à des fins d'enseignement et de loufoque. Cette figure est fondée sur le même modèle simple que la précédente et utilise aussi les données mensuelles. 
 
+Les fichiers _predictions.R_ et _deces_hebdo_bayes_poisson.R_ concernent les modèles OLS simples et le modèle Bayésien décrits plus bas. 
 
 ## Données
 Les données sur les décès au Québec sont disponibles le [site du gouvernement du Québec](https://www.stat.gouv.qc.ca/statistiques/population-demographie/naissance-fecondite/i210.htm)

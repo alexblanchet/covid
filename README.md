@@ -11,6 +11,8 @@ Le fichier _fig_cavabienaller.R_ permet de faire les prédictions de décès et 
 
 Les fichiers _predictions.R_ et _deces_hebdo_bayes_poisson.R_ concernent les modèles OLS simples et le modèle Bayésien décrits plus bas. 
 
+Le script _oxford_covid_policy_tracker.R_ créé la figure concernant l'évolution de la sévérité des mesures gouvernementales pour faire face à la Covid-19. La figure compare les réponses du Québec, de l'Ontario, de la Nouvelle-Zélande et de l'Australie sur la mesure de "Stringency Index" développée par le [Oxford COVID-19 Government Response Tracker](https://github.com/OxCGRT/covid-policy-tracker/tree/master/data)
+
 ## Données
 Les données sur les décès au Québec sont disponibles le [site du gouvernement du Québec](https://www.stat.gouv.qc.ca/statistiques/population-demographie/naissance-fecondite/i210.htm)
 
@@ -18,7 +20,7 @@ Les données pour les mois de mars et avril 2020 n'ont pas été officiellement 
 
 L'ISQ a rendu public des [données _hebdomadaires](https://www.stat.gouv.qc.ca/statistiques/population-demographie/deces-mortalite/DecesSemaine_QC_2010-2020_GrAge.xlsx). 
 
-Des données sur la mobilité ont été rendues publiques par [Google](https://www.google.com/covid19/mobility/) et [Apple](https://www.apple.com/covid19/mobility). 
+Les données pour la figure concernant l'évolution de la sévérité des mesures proviennent du [Oxford COVID-19 Government Response Tracker](https://github.com/OxCGRT/covid-policy-tracker/tree/master/data).  Le script R créant la figure est le _oxford_covid_policy_tracker.R_.
 
 ## Projections de décès
 
